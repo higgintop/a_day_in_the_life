@@ -1,5 +1,4 @@
 ruby '2.2.2'
-#ruby-gemset=stepoff
 source 'https://rubygems.org'
 
 
@@ -29,6 +28,7 @@ gem 'simple_form'
 gem 'sorcery'
 
 gem 'turbolinks'
+gem 'bcrypt',   '3.1.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

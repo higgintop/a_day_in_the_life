@@ -3,6 +3,11 @@ require 'rails_helper'
 require 'capybara/rspec'
 
 feature "Users manage journals" do
+
+  before do
+    signin_as Fabricate(:user)
+  end
+  
   scenario "viewing journal list when empty" do
     visit root_path
     click_on "My Journals"

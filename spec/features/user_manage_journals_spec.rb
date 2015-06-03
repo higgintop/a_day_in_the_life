@@ -12,7 +12,7 @@ feature "Users manage journals" do
 
   scenario "viewing list of journals" do
     Fabricate(:journal, title: "Sleep Tracking")
-    fabricate(:journal, title: "Movie Reviews")
+    Fabricate(:journal, title: "Movie Reviews")
     Fabricate(:journal, title: "Travel")
     visit root_path
     click_on "My Journals"

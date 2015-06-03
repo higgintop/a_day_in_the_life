@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      auto_login(@user)
+      redirect_to root_path, notice: "Welcome, #{@user.name}"
     else
       flash.alert = "Please fix the errors below to continue."
       render :new

@@ -11,6 +11,7 @@
       %h1 A Day In The Life
       %nav
         %ul
+          %li= link_to "My Journals", journals_path
           - if logged_in?
             %li= link_to "Sign Out", user_session_path, method: :delete
           - else

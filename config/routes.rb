@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   resource :user_session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
-  resources :journals, only: [:index]
+  resources :journals, except: [:show]
 end

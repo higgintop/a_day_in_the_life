@@ -1,0 +1,6 @@
+= simple_form_for journal do |f|
+  = f.input :title
+  - button_text = (journal.persisted?) ? "Save Changes" : "Create Journal"
+  = f.button :submit, button_text
+
+

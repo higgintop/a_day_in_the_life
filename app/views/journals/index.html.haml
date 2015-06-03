@@ -1,14 +1,14 @@
--if logged_in?
-  - if @journals.empty?
-    %p There aren't any journals yet.
-  - else
-    - sorted_by_date = (params[:sort] == 'created_at')
-    = link_to_unless sorted_by_date, "Sort: Date", journals_path(sort: :created_at)
-    = link_to_if sorted_by_date, "Sort: Alphabetical", journals_path
-
-  %ul#journals
-    - @journals.each do |journal|
-      %li #{journal.title}
-
+- if @journals.empty?
+  %p There aren't any journals yet.
 - else
-  %p Please log in to see your journals.
+  - sorted_by_date = (params[:sort] == 'updated_at')
+  = link_to_unless sorted_by_date, "Sort: Date", journals_path(sort: :updated_at)
+  = link_to_if sorted_by_date, "Sort: Alphabetical", journals_path
+
+%ul#journals
+  - @journals.each do |journal|
+    %li
+      #{journal.title} | #{journal.created_at.strftime("%b %d, %Y")}
+      = link_to "Edit", edit_journal_path(journal)
+= link_to "Add New Journal", new_journal_path
+

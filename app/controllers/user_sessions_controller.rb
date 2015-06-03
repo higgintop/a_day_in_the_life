@@ -1,11 +1,9 @@
 class UserSessionsController < ApplicationController
   def new
-    puts "IN NEW"
     @user = User.new
   end
 
   def create
-    puts "IN CREATE"
     if @user = login(params[:user][:email], params[:user][:password])
       redirect_to root_path, notice: "Welcome back, #{@user.name}"
     else

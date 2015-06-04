@@ -43,22 +43,28 @@ header {
 // Main page layout
 //******************************
 section {
-  padding: 25px;
+  padding: 25px 0;
   width: 50%;
   margin: 0 auto;
 
-  form.button_to {
-    display: inline-block;
-    margin-left: 70px;
-
-    // two input btns inside form
-    .sign_up_btn, .sign_in_btn {
-      background-color: #FF7148;
-      color: white;
-      width: 150px;
-      height: 100px;
-      border-radius: 15px;
-      font-size: 24px;
+  .button-grouping {
+    width: 100%;
+    text-align: center;
+    form.button_to {
+      display: inline-block;
+      margin: 0 auto;
+      // two input btns inside form
+      .sign_up_btn, .sign_in_btn {
+        background-color: #FF7148;
+        color: white;
+        width: 150px;
+        height: 100px;
+        border-radius: 15px;
+        font-size: 24px;
+      }
+      &:last-child {
+        margin-left: 30px;
+      }
     }
   }
 }
@@ -67,6 +73,14 @@ section {
 // Sign up/Sign in Form styles
 //********************************
 .sign_up_form, .sign_in_form {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  h2 {
+    text-align: center;
+    color: white;
+  }
 }
 
 

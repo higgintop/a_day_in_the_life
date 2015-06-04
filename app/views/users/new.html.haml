@@ -1,10 +1,12 @@
 %div.sign_up_form
   %h2 Sign Up
-  = simple_form_for @user do |f|
+  = simple_form_for @user,:html => {:class => "form-horizontal"} do |f|
     = f.input :name
     = f.input :email
     = f.input :password
     = f.input :password_confirmation
 
-    = f.button :submit, "Sign Up"
+    %div.text-center
+      = f.button :submit, "Sign Up"
+
 

@@ -17,6 +17,6 @@
     -else
       %header
         %a.logo(href=root_path) A Day In The Life
-        = button_to "My Journals", journals_path, :class => "journals_btn"
+        = button_to "My Journals", journals_path, method: :get, :class => "journals_btn"
         = button_to "Sign Out", user_session_path, method: :delete, :class => "sign_out_btn"
     = yield

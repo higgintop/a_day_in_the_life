@@ -2,7 +2,9 @@
 @import "bootstrap";
 
 
-// FONTS
+//*****************************
+//  FONTS
+//*****************************
 @font-face {
   font-family: 'logoFont';
   src: url('NexaRust.otf');
@@ -13,79 +15,13 @@
   src: url('NexaRustHandmade.otf');
 }
 
+//******************************
+// BODY
+//******************************
+body {
+  background-color: #93B1C6;
+}
 
-
-// NAVBAR
-/*$bgDefault      : #93b1c6;*/
-/*$bgHighlight    : #f5f5f5;*/
-/*$colDefault     : #f5f5f5;*/
-/*$colHighlight   : #f5f5f5;*/
-/*$dropDown       : false;*/
-/*.navbar-default {*/
-  /*background-color: $bgDefault;*/
-  /*border-color: $bgHighlight;*/
-  /*.navbar-brand {*/
-    /*color: $colDefault;*/
-    /*&:hover, &:focus { */
-      /*color: $colHighlight; }}*/
-  /*.navbar-text {*/
-    /*color: $colDefault; }*/
-  /*.navbar-nav {*/
-    /*> li {*/
-      /*> a {*/
-        /*color: $colDefault;*/
-        /*&:hover,  &:focus {*/
-          /*color: $colHighlight; }}*/
-      /*@if $dropDown {*/
-        /*> .dropdown-menu {*/
-          /*background-color: $bgDefault;*/
-          /*> li > a {*/
-            /*color: $colDefault;*/
-            /*&:hover,  &:focus {*/
-              /*color: $colHighlight;*/
-              /*background-color: $bgHighlight; }}*/
-          /*.divider {*/
-            /*background-color: $bgHighlight;}}}*/
-    /*}*/
-    /*> .active {*/
-      /*> a, > a:hover, > a:focus {*/
-        /*color: $colHighlight;*/
-        /*background-color: $bgHighlight; }}*/
-    /*> .open {*/
-      /*> a, > a:hover, > a:focus {*/
-        /*color: $colHighlight;*/
-        /*background-color: $bgHighlight; }}}*/
-  /*.navbar-toggle {*/
-    /*border-color: $bgHighlight;*/
-    /*&:hover, &:focus {*/
-      /*background-color: $bgHighlight; }*/
-    /*.icon-bar {*/
-      /*background-color: $colDefault; }}*/
-  /*.navbar-collapse,*/
-  /*.navbar-form {*/
-    /*border-color: $colDefault; }*/
-  /*.navbar-link {*/
-    /*color: $colDefault;*/
-    /*&:hover {*/
-      /*color: $colHighlight; }}}*/
-/*@media (max-width: 767px) {*/
-  /*.navbar-default .navbar-nav .open .dropdown-menu {*/
-    /*> li > a {*/
-      /*color: $colDefault;*/
-      /*&:hover, &:focus {*/
-        /*color: $colHighlight; }}*/
-    /*> .active {*/
-      /*> a, > a:hover, > a:focus {*/
-        /*color: $colHighlight;*/
-        /*background-color: $bgHighlight; }}}*/
-/*}*/
-
-/*.navbar-brand,*/
-/*.navbar-nav li a {*/
-    /*line-height: 150px;*/
-    /*height: 150px;*/
-    /*padding-top: 0;*/
-/*}*/
 //******************************
 // HEADER
 //******************************
@@ -103,31 +39,35 @@ header {
   }
 }
 
+//******************************
+// Main page layout
+//******************************
 section {
-  padding: 100px;
+  padding: 25px;
   width: 50%;
-  margin: 50px auto;
+  margin: 0 auto;
 
   form.button_to {
     display: inline-block;
+    margin-left: 70px;
 
+    // two input btns inside form
     .sign_up_btn, .sign_in_btn {
       background-color: #FF7148;
       color: white;
       width: 150px;
       height: 100px;
       border-radius: 15px;
-      //font-family: buttonFont;
       font-size: 24px;
-      margin-left: 20px;
     }
-    //.sign_up_btn {
-      //margin-left: 50px;
-    //}
   }
 }
 
-
-body {
-  background-color: #93B1C6;
+//********************************
+// Sign up/Sign in Form styles
+//********************************
+.sign_up_form, .sign_in_form {
 }
+
+
+

@@ -8,19 +8,15 @@
     = csrf_meta_tags
   %body
     -if !logged_in?
-      %header.navbar.navbar-inverse.navbar-fixed-top
-        %div.container-fluid
-          %a.navbar-brand(href=root_path) A Day In The Life
-          %nav
-            %ul.nav.navbar-nav.navbar-right
-              %li
-                =link_to "Sign In", new_user_session_path
-              %li
-                =link_to "Sign Up", new_user_path
+      %header
+        %a.logo(href=root_path) A Day In The Life
+      %section
+        =button_to "Sign In", new_user_session_path, :class => "sign_up_btn"
+        =button_to "Sign Up", new_user_path,  :class => "sign_in_btn"
     -else
       %header.navbar.navbar-inverse.navbar-fixed-top
         %div.container-fluid
-          %a.navbar-brand(href=root_path) A Day In The Life
+          %a.navbar-brand.logo(href=root_path) A Day In The Life
           %nav
             %ul.nav.navbar-nav.navbar-right
               - unless controller_name == "users"

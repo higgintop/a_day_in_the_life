@@ -15,17 +15,8 @@
           =button_to "Sign In", new_user_session_path, method: :get, :class => "sign_up_btn"
           =button_to "Sign Up", new_user_path,  method: :get, :class => "sign_in_btn"
     -else
-      %header.navbar.navbar-inverse.navbar-fixed-top
-        %div.container-fluid
-          %a.navbar-brand.logo(href=root_path) A Day In The Life
-          %nav
-            %ul.nav.navbar-nav.navbar-right
-              - unless controller_name == "users"
-                %li
-                  =link_to "My Journals", journals_path
-              - unless controller_name == "user_sessions"
-                %li
-                  =link_to "Sign Out", user_session_path, method: :delete
-    //%p.notice= notice
-    //%p.alert= alert
+      %header
+        %a.logo(href=root_path) A Day In The Life
+        = button_to "My Journals", journals_path, :class => "journals_btn"
+        = button_to "Sign Out", user_session_path, method: :delete, :class => "sign_out_btn"
     = yield

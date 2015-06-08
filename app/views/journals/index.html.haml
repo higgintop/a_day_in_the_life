@@ -1,3 +1,4 @@
+%h1 My Journals
 - if @journals.empty?
   %p There aren't any journals yet.
 - else
@@ -5,10 +6,20 @@
   = link_to_unless sorted_by_date, "Sort: Date", journals_path(sort: :updated_at)
   = link_to_if sorted_by_date, "Sort: Alphabetical", journals_path
 
-%ul#journals
-  - @journals.each do |journal|
-    %li
-      #{journal.title} | #{journal.created_at.strftime("%b %d, %Y")}
+= button_to "Add New Journal", new_journal_path, method: :get, class: 'add-journal-btn'
+
+%hr
+
+// TEST AREA FOR JOURNAL LAYOUT
+- @journals.each do |journal|
+  %div.journal
+    %span
       = link_to "Edit", edit_journal_path(journal)
-= link_to "Add New Journal", new_journal_path
+    %span Delete
+    %div.journal-info
+      #{journal.updated_at.strftime("%b %d, %Y")}
+      %br
+      #{journal.title}
+    %div.journal-view
+      View
 

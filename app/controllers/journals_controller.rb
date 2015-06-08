@@ -27,7 +27,7 @@ class JournalsController < ApplicationController
   def edit
     @journal = Journal.find(params[:id])
   end
-  
+
   def update
     @journal = Journal.find(params[:id])
     @journal.assign_attributes(journal_params)

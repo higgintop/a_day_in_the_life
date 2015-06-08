@@ -1,6 +1,13 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+//****************************
+// Color Variables
+//****************************
+$main-background: #233636;
+$primary-button-color: #30Dffc;
+$header-background: white;
+$logo-color: #EE1113;
 
 //*****************************
 //  FONTS
@@ -19,19 +26,19 @@
 // BODY
 //******************************
 body {
-  background-color: #93B1C6;
+  background-color: $main-background;
 }
 
 //******************************
 // HEADER
 //******************************
 header {
-  background-color: #C7D0D5;
+  background-color: white;
   text-align: center;
   padding: 50px;
 
   .logo {
-    color: #FF7148;
+    color: $logo-color;
     text-decoration: none;
     text-align: center;
     font-size: 72px;
@@ -43,7 +50,7 @@ header {
     display: inline-block;
     margin: 10px auto;
     .journals_btn, .sign_out_btn {
-      background-color: #FF7148;
+      background-color: $primary-button-color;
       color: white;
       width: 150px;
       height: 50px;
@@ -69,7 +76,7 @@ section {
       margin: 0 auto;
       // two input btns inside form
       .sign_up_btn, .sign_in_btn {
-        background-color: #FF7148;
+        background-color: $primary-button-color;
         color: white;
         width: 150px;
         height: 100px;
@@ -97,5 +104,117 @@ section {
   }
 }
 
+//*********************************
+// JOURNALS
+//********************************
+
+.add-journal-btn {
+  background-color: $primary-button-color;
+  color: white;
+  width: 200px;
+  height: 100px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+.journal {
+  width: 300px;
+  height: 80px;
+  background: #fff;
+  border: 1px solid #CCC;
+  border-radius: 2px;
+  margin: 50px;
+  display: inline-block;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 295px;
+    height: 70px;
+    background: #fff;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    transform: rotate(2deg);
+    position: relative;
+    top: 12px;
+    left: 2px;
+    z-index: -1;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    width: 295px;
+    height: 75px;
+    background: #fff;
+    border: 1px solid #CCC;
+    border-radius: 2px;
+    transform: rotate(-2deg);
+    position: relative;
+    top: -136px;
+    z-index: -2;
+  }
+}
+
+.journal > span:first-child {
+  display: block;
+  width: 45px;
+  background: #1FDA9A;
+  position: relative;
+  top: -55px;
+  left: -15px;
+  /* Text */
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  text-align: center;
+}
+
+.journal > span:nth-child(2) {
+  display: block;
+  width: 45px;
+  background: #1FDA9A;
+  position: relative;
+  top: -45px;
+  left: -15px;
+  /* Text */
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  text-align: center;
+
+}
 
 
+
+.journal > .journal-info {
+  display: inline-block;
+  position: relative;
+  top: -100px;
+  left: 60px;
+  /* Text */
+  color: #232323;
+  font-weight: 600;
+  line-height: 25px;
+}
+.journal > .journal-info:first-line {
+  text-transform: uppercase;
+  font-size: 10px;
+  margin: 10px 0 0 0;
+  font-weight: 700;
+}
+
+.journal > .journal-view {
+  display: inline-block;
+  border: 1px solid red;
+  border-radius: 15px;
+  width: 60px;
+  position: relative;
+  top: -100px;
+  left: 115px;
+
+  /* Text */
+  color: #E35354;
+  text-align: center;
+  font-weight: 700;
+}

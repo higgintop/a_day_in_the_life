@@ -21,7 +21,7 @@
         %li
           = link_to "Edit", edit_journal_path(journal)
           %span
-            = link_to "Delete"
+            = link_to "Delete", journal_path(journal), method: :delete
         %li
           = link_to "View!"
 

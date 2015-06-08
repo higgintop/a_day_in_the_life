@@ -40,6 +40,12 @@ class JournalsController < ApplicationController
     end
   end
 
+  def destroy
+    @journal = Journal.find(params[:id])
+    @journal.destroy
+    redirect_to journals_path, notice: "#{@journal.title} Journal has been deleted."
+  end
+
   protected
   def journal_params
     params.require(:journal).permit(:title)

@@ -4,14 +4,13 @@
     %p There aren't any journals yet.
   - else
     - sorted_by_date = (params[:sort] == 'updated_at')
-    = link_to_unless sorted_by_date, "Sort: Date", journals_path(sort: :updated_at)
-    = link_to_if sorted_by_date, "Sort: Alphabetical", journals_path
+    = link_to_unless sorted_by_date, "Sort: Date", user_journals_path(current_user, sort: :updated_at)
+    = link_to_if sorted_by_date, "Sort: Alphabetical", user_journals_path
 
-  = button_to "Add New Journal", new_journal_path, method: :get, class: 'add-journal-btn'
+  = button_to "Add New Journal", new_user_journal_path(current_user), method: :get, class: 'add-journal-btn'
 
   %hr
 
-  // TEST AREA FOR JOURNAL LAYOUT
   - @journals.each do |journal|
     %div.journal
       %div.notebook-lines
@@ -19,9 +18,9 @@
         %li #{journal.updated_at.strftime("%b %d, %Y")}
         %li #{journal.title}
         %li
-          = link_to "Edit", edit_journal_path(journal)
+          = link_to "Edit", edit_user_journal_path(current_user, journal)
           %span
-            = link_to "Delete", journal_path(journal), method: :delete
+            = link_to "Delete", user_journal_path(current_user, journal), method: :delete
         %li
-          = link_to "View!"
+          = link_to "View!", journal_entries_path(journal)
 

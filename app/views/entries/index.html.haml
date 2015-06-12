@@ -1,0 +1,11 @@
+%h1 Entries for #{@journal.title}!
+%ul
+  - @entries.each do |entry|
+    %h2 #{entry.title}
+    %p #{entry.post}
+    =image_tag "#{entry.image_url}"
+    =button_to "Edit Entry", edit_journal_entry_path(@journal, entry),method: :get
+    =button_to "Delete Entry", journal_entry_path(@journal, entry), method: :delete
+
+=link_to "Create New Entry", new_journal_entry_path(@journal) 
+

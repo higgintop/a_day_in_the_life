@@ -1,3 +1,6 @@
 %h1 Edit Journal
-= render partial: 'journals/form', locals: { journal: @journal }
+-#= render partial: 'journals/form', locals: { journal: @journal }
+= simple_form_for @journal, url: user_journal_path, method: :put do |f|
+  = f.input :title
+  = f.button :submit, "Edit Journal"
 

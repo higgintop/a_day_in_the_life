@@ -7,22 +7,19 @@ feature "User signs in" do
   before do
     visit "/"
     click_on "Sign In"
-    page.should_not have_link("Sign In")
   end
 
   scenario "Returning customer signs in" do
     user = Fabricate(:user, name: "Jenny")
     fill_in "Email", with: user.email
     fill_in "Password", with: "password1"
-    click_button "Sign In"
-    page.should have_content("Welcome back, Jenny")
+    click_button "Go!"
     page.should_not have_content("Sign In")
     page.should_not have_content("Sign Up")
-    page.should have_content("Sign Out")
+    page.should have_css(".sign_out_btn")
     # Smoke testing Sign Out:
     click_on "Sign Out"
-    page.should have_content("You have been signed out")
-    page.should have_content("Sign In")
+    page.should have_css(".sign_in_btn")
     page.should_not have_content("Sign Out")
   end
 
@@ -30,7 +27,7 @@ feature "User signs in" do
     user = Fabricate(:user, name: "Bob")
     fill_in "Email", with: user.email
     fill_in "Password", with: "wrongpassword"
-    click_button "Sign In"
+    click_button "Go!"
     page.should have_content("We could not sign you in. Please check your email/password and try again.")
     page.should_not have_content("Create your account")
     page.should_not have_content("Password confirmation")
@@ -44,12 +41,12 @@ feature "User signs in" do
     Fabricate(:user, email: "susie@example.com", password: "ThisIsAwesome", password_confirmation: "ThisIsAwesome")
     fill_in "Email", with: "joe@example.com"
     fill_in("Password", with: "ThisIsAwesome")
-    click_on "Sign In"
+    click_on "Go!"
     page.should have_content("We could not sign you in. Please check your email/password and try again.")
   end
 
   scenario "User signs in with blanks" do
-    click_on "Sign In"
+    click_on "Go"
     page.should have_content("We could not sign you in. Please check your email/password and try again.")
   end
 end

@@ -5,9 +5,14 @@ require 'capybara/rspec'
 feature "Users manage journals" do
 
   before do
-    signin_as Fabricate(:user)
+    user = Fabricate(:user, name: "Jenny")
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: "password1"
+    click_button "Go!"
   end
-  
+
   scenario "viewing journal list when empty" do
     visit root_path
     click_on "My Journals"

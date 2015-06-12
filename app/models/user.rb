@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :entries
+  has_many :journals
+
   authenticates_with_sorcery!
 
   validates :email, :name, presence: true

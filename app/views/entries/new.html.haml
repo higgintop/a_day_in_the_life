@@ -1,0 +1,6 @@
+%h1 Create a new entry for journal!
+= simple_form_for @entry,:url => journal_entries_path, :method => :post do |f|
+  = f.input :title
+  = f.input :post
+  = f.input :image, label: "Upload an image"
+  = f.button :submit, "Add Entry"

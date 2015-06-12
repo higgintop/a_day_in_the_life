@@ -1,11 +1,13 @@
 %h1 Entries for #{@journal.title}!
+=button_to "Create New Entry", new_journal_entry_path(@journal),method: :get
+
 %ul
   - @entries.each do |entry|
-    %h2 #{entry.title}
-    %p #{entry.post}
-    =image_tag "#{entry.image_url}"
-    =button_to "Edit Entry", edit_journal_entry_path(@journal, entry),method: :get
-    =button_to "Delete Entry", journal_entry_path(@journal, entry), method: :delete
+    %div.entry-container
+      %h2 #{entry.title}
+      %p
+        =sanitize(truncate(entry.post, length: 100))
+      =image_tag "#{entry.image_url}"
+      =button_to "View Entry", journal_entry_path(@journal, entry), method: :get
 
-=link_to "Create New Entry", new_journal_entry_path(@journal) 
 

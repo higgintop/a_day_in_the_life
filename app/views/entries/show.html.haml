@@ -1,0 +1,12 @@
+=link_to "Back", journal_entries_path
+
+%h1
+  =@entry.title
+=image_tag "#{@entry.image_url}"
+%p
+  =@entry.post
+%p Problem is ... don't have a journal_id at this point
+
+=button_to "Edit Entry", edit_journal_entry_path(params[:journal_id], @entry),method: :get
+=button_to "Delete Entry", journal_entry_path(params[:journal_id], @entry), method: :delete
+

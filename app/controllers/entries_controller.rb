@@ -15,8 +15,12 @@ class EntriesController < ApplicationController
   end
 
   def edit
-    logger.info("EDIT A ENTRY")
      @entry = Entry.find(params[:id]) 
+  end
+
+  def show
+    # Issue - when showing a single entry ... we do NOT have access to a journal ...
+    @entry = Entry.find(params[:id])
   end
 
   def update
@@ -24,7 +28,7 @@ class EntriesController < ApplicationController
     @entry.assign_attributes(entry_params)
     if @entry.save
       flash.notice = "#{@entry.title} Entry was updated successfully"
-      redirect_to journal_entries_path
+      redirect_to journal_entry_path
     else
       flash.alert = "Please fix the errors below to continue."
       render :edit
@@ -32,14 +36,13 @@ class EntriesController < ApplicationController
   end
 
   def destroy
+    logger.info("IN DESTROY WITH PARAMS" + params.to_s)
     @entry = Entry.find(params[:id])
     @entry.destroy
     redirect_to journal_entries_path, notice: "#{@entry.title} Entry has been deleted." 
   end
 
   def index
-    logger.info("MADE IT INTO THE INDEX CONTROLLER FOR AN ENTRY!!!!!!!!!!!!*********")
-    logger.info("PARAMS ARE" + params.to_s)
     @journal = Journal.find(params[:journal_id])
     @entries = @journal.entries.all
   end

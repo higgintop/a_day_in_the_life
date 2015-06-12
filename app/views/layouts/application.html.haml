@@ -10,8 +10,9 @@
     -if !logged_in?
       %header
         %a.logo(href=root_path) A Day In The Life
-      %p.notice= notice
-      %p.alert= alert
+      %div.flash-container
+        %p.notice= notice
+        %p.alert= alert
 
       %section
         %div.button-grouping
@@ -22,7 +23,8 @@
         %a.logo(href=root_path) A Day In The Life
         = button_to "My Journals", user_journals_path(current_user), method: :get, :class => "journals_btn"
         = button_to "Sign Out", user_session_path, method: :delete, :class => "sign_out_btn"
-      %p.notice= notice
-      %p.alert= alert
+      %div.flash-container
+        %p.notice= notice
+        %p.alert= alert
 
     = yield

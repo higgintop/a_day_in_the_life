@@ -70,6 +70,19 @@ header {
 }
 
 //******************************
+// Styles for the flash notices
+//******************************
+.flash-container {
+  margin-top: 0;
+  background-color: lightblue;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  border-top: 1px solid darken(lightblue, 30%);
+}
+
+//******************************
 // Main page layout
 //******************************
 section {

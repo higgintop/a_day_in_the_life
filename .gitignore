@@ -8,3 +8,6 @@
 
 # Ignore the database files
 *.sqlite3
+
+# Ignore images
+public/development/*

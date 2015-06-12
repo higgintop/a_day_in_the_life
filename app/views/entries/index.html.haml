@@ -1,13 +1,28 @@
 %h1 Entries for #{@journal.title}!
 =button_to "Create New Entry", new_journal_entry_path(@journal),method: :get
 
-%ul
-  - @entries.each do |entry|
-    %div.entry-container
-      %h2 #{entry.title}
-      %p
-        =sanitize(truncate(entry.post, length: 100))
-      =image_tag "#{entry.image_url}"
+-# Test section
+%div.entries-container
+  -div_num = 0
+  -@entries.each do |entry|
+    %div{class: "entry-#{div_num}"}
+      - background_image = entry ? entry.image_url.to_s : ""
+      %div.image-container{:style => "background-image: url('#{background_image}')"}
+      %h2.title #{entry.title}
       =button_to "View Entry", journal_entry_path(@journal, entry), method: :get
+      - div_num += 1 
+
+-#%ul
+  -#- @entries.each do |entry|
+    -#- background_image = entry ? entry.image_url.to_s : ""
+    -#%div.entry-container
+      -#%div.image-container{:style => "background-image: url('#{background_image}')"}
+      -#%h2 #{entry.title}
+      -#%p
+        -#=sanitize(truncate(entry.post, length: 100))
+      -#-#=image_tag "#{entry.image_url}"
+      -#=button_to "View Entry", journal_entry_path(@journal, entry), method: :get
+
+=paginate @entries
 
 

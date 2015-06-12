@@ -36,7 +36,6 @@ class EntriesController < ApplicationController
   end
 
   def destroy
-    logger.info("IN DESTROY WITH PARAMS" + params.to_s)
     @entry = Entry.find(params[:id])
     @entry.destroy
     redirect_to journal_entries_path, notice: "#{@entry.title} Entry has been deleted." 
@@ -44,12 +43,10 @@ class EntriesController < ApplicationController
 
   def index
     @journal = Journal.find(params[:journal_id])
-    @entries = @journal.entries.all
+    @entries = @journal.entries.all.page(params[:page]).per(6) #6 entries per page
   end
 
   def create
-    # Load entry
-    logger.info("THE PARAMS CREATE GETS ... " + params.to_s)
     if params[:id].present?
       @entry = Entry.find(params[:id])
     else

@@ -4,7 +4,7 @@
 //****************************
 // Color Variables
 //****************************
-$main-background: #027878;
+$main-background: black;
 $primary-button-color: #10C5CD;
 $header-background: white;
 $logo-color: #EE1113;
@@ -50,7 +50,7 @@ $success-color: #e6efc2 !default;
 // BODY
 //******************************
 body {
-  background-color: $main-background;
+  background-color:$main-background;
 }
 
 //******************************

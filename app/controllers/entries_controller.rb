@@ -42,8 +42,10 @@ class EntriesController < ApplicationController
   end
 
   def index
+    logger.info("THE PARAMS IN INDEX ARE ..." + params.to_s)
     @journal = Journal.find(params[:journal_id])
     @entries = @journal.entries.all.page(params[:page]).per(6) #6 entries per page
+    @date = params[:month] ? Date.strptime(params[:month], '%Y-%m') : Date.today  
   end
 
   def create

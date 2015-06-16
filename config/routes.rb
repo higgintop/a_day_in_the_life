@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
 
+  get 'calendar/view'
+
   resource :user_session, only: [:new, :create, :destroy]
   #resources :users, only: [:new, :create] do
     #resources :journals, except: [:show] do
@@ -14,5 +16,6 @@ Rails.application.routes.draw do
 
   resources :journals, only: [:show] do
     resources :entries
+
   end
 end

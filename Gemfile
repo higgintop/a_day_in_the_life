@@ -41,6 +41,9 @@ gem 'rmagick'
 # Pagination gem
 gem 'kaminari'
 
+#calendar
+gem "watu_table_builder", :require => "table_builder"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

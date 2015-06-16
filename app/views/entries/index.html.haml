@@ -1,19 +1,39 @@
-%h1 Entries for #{@journal.title}!
-=button_to "Create New Entry", new_journal_entry_path(@journal),method: :get
+-#%h1 Entries for #{@journal.title}!
+-#=button_to "Create New Entry", new_journal_entry_path(@journal),method: :get
+-#%hr
 
--# Test section
-%div.entries-container
-  -div_num = 0
-  -@entries.each do |entry|
-    %div{class: "entry-#{div_num}"}
-      - background_image = entry ? entry.image_url.to_s : ""
-      %div.image-container{:style => "background-image: url('#{background_image}')"}
-      %h2.title #{entry.title}
-    %div{class: "entry-#{div_num}-hover"}
-      =link_to "View", journal_entry_path(@journal, entry), method: :get
-      - div_num += 1
+%div#calendar
+  %h2#month
+    = link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m")
+    =h @date.strftime("%B %Y")
+    = link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m")
+  =calendar_for @entries, :year => @date.year, :month => @date.month do |calendar|
+    =calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+    =calendar.day(:day_method => :created_at) do |date, entries|
+      #{date.day}
+      %ul
+        -entries.each do |entry|
+          %li 
+            =link_to "#{entry.title}", journal_entry_path(@journal, entry), method: :get
+
+-#%nav.entries-nav
+  -#%ul
+    -#%li
+      -#=link_to "New", new_journal_entry_path(@journal),method: :get
+    -#%li Calendar
+    -#%li Archive
+
+-#%div.entries-container
+  -#-div_num = 0
+  -#-@entries.each do |entry|
+    -#%div{class: "entry-#{div_num}"}
+      -#- background_image = entry ? entry.image_url.to_s : ""
+      -#%div.image-container{:style => "background-image: url('#{background_image}')"}
+      -#%h2.title #{entry.title}
+    -#%div{class: "entry-#{div_num}-hover"}
+      -#=link_to "View", journal_entry_path(@journal, entry), method: :get
+      -#- div_num += 1
 
 
-=paginate @entries
-
+-#=paginate @entries
 

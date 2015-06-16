@@ -23,9 +23,4 @@
             = link_to "Delete", user_journal_path(current_user, journal), method: :delete
         %li
           = link_to "View!", journal_entries_path(journal)
-%hr
 
--# Calendar test
-%div.calendar-div
-  =month_calendar do |date|
-    -date

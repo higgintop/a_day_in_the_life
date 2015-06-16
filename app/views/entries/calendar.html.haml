@@ -1,0 +1,28 @@
+%div.header-container
+  %h1 Entries for #{@journal.title}!
+%hr
+
+%nav.entries-nav
+  %ul
+    %li
+      =link_to "", new_journal_entry_path(@journal),method: :get, class: 'newEntry'
+    %li
+      -#NOTE: this needs cleaned up -> don't need to pass in an entry id
+      =link_to "", journal_entry_calendar_path(@journal, :entry_id => 41), method: :get,  class: 'calEntry'
+    %li 
+      =link_to "", journal_entries_path, class: 'archiveEntry'
+
+
+%div#calendar
+  %h2#month
+    = link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m")
+    =h @date.strftime("%B %Y")
+    = link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m")
+  =calendar_for @entries, :year => @date.year, :month => @date.month do |calendar|
+    =calendar.head('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday')
+    =calendar.day(:day_method => :created_at) do |date, entries|
+      #{date.day}
+      %ul
+        -entries.each do |entry|
+          %li
+            =link_to "#{entry.title}", journal_entry_path(@journal, entry), method: :get

@@ -4,10 +4,12 @@
 //****************************
 // Color Variables
 //****************************
-$main-background: lightgrey;
-$primary-button-color: #10C5CD;
+$main-background: #DCD8CF;
+$primary-button-color: #282827;
+//#10C5CD
 $header-background: white;
-$logo-color: #EE1113;
+$logo-color:#E25D33;
+//#EE1113;
 $alert-color: #fff6bf !default;
 $error-color: #fbe3e4 !default;
 $notice-color: #e5edf8 !default;
@@ -45,6 +47,18 @@ $success-color: #e6efc2 !default;
   src: url('MoonFlowerBold.ttf');
 }
 
+@font-face {
+  font-family: 'mathleteFont';
+  src: url('mathlete.otf');
+}
+
+@font-face {
+  font-family: 'opensansFont';
+  src: url('opensans.ttf');
+}
+
+
+
 
 //******************************
 // BODY
@@ -57,7 +71,8 @@ body {
 // HEADER
 //******************************
 header {
-  background-color: white;
+  background:linear-gradient(rgba(255,255,255, 0.7), rgba(255,255,255, 0.7)), url('book.JPG') no-repeat;
+  background-size: 100%;
   text-align: center;
   padding: 50px;
 
@@ -74,7 +89,7 @@ header {
   form.button_to{
     display: inline-block;
     margin: 10px auto;
-    .journals_btn, .sign_out_btn {
+    .journals_btn, .sign_out_btn, .profile_btn {
       background-color: $primary-button-color;
       color: white;
       font-family: handwrittenFont;
@@ -124,11 +139,12 @@ section {
       // two input btns inside form
       .sign_up_btn, .sign_in_btn {
         background-color: $primary-button-color;
+        font-family: handwrittenFont;
         color: white;
         width: 150px;
-        height: 100px;
+        height: 50px;
         border-radius: 15px;
-        font-size: 24px;
+        font-size: 30px;
       }
       &:last-child {
         margin-left: 30px;

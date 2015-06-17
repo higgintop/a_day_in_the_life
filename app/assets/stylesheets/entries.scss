@@ -4,10 +4,12 @@
 
 
 // CALENDAR
+#calendar {
+  width: 80%;
+  margin-left: 150px;
+}
 #calendar table {
   border-collapse: collapse;
-  width: 80%;
-  margin-left: 200px;
 }
 
 #calendar td,
@@ -97,7 +99,7 @@
     display: inline-block;
     padding-left: 0;
     margin-left: 20px;
- 
+
     li {
       list-style: none;
       display: block;
@@ -173,7 +175,7 @@
     position: absolute;
     top: -10px;
     left: -10px;
-    
+
     a {
       display: block;
       position: absolute;
@@ -192,7 +194,7 @@
       border-radius: 50%;
 
       &:hover {
-        background-color: #10C5CD;
+        background-color: #E25D33;
       }
     }
   }
@@ -200,31 +202,101 @@
   // row 1 of entries
   .entry-0 {
     top: 0;
-    left: 0;
+    left: 50px;
   }
 
   .entry-1 {
     top: 0;
-    left: 390px;
+    left: 440px;
   }
 
   .entry-2 {
     top: 0;
-    left: 780px;
+    left: 830px;
   }
   // row 2 of entries
   .entry-3 {
     top: 450px;
-    left: 0;
+    left: 50px;
   }
 
   .entry-4 {
     top: 450px;
-    left: 390px;
+    left: 440px;
   }
 
   .entry-5 {
     top: 450px;
-    left: 780px;
+    left: 830px;
   }
 }
+
+.new-entry-container, .edit-entry-container {
+  width: 50%;
+  margin: 20px auto;
+
+  h1 {
+    text-align: center;
+    font-family: handWrittenFont;
+    font-size: 60px;
+    color: white;
+  }
+
+  input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  textarea {
+  height: 200px;
+  }
+}
+
+
+.entry-container {
+  width: 50%;
+  margin: 0 auto;
+
+  .backBtn {
+    font-family: mathleteFont;
+    font-size: 40px;
+    color:#E25D33;
+  }
+
+  h1 {
+    font-family: mathleteFont;
+    font-size: 70px;
+    background-color:#282827;
+    color: white;
+    text-align: center;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  p {
+   font-family: opensansFont;
+   font-size: 20px;
+   line-height: 1.8;
+   font-weight: 600;
+  }
+
+  .editEntryBtn, .deleteEntryBtn {
+    display: inline-block;
+    background-color: #282827;
+    color: white;
+    font-family: handwrittenFont;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 30px; 
+  }
+}
+
+.button_to {
+  display: inline-block;
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+

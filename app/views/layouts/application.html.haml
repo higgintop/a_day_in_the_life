@@ -11,8 +11,8 @@
       %header
         %a.logo(href=root_path) A Day In The Life
       %div.flash-container
-        %p.notice= notice
-        %p.alert= alert
+        - flash.each do |key, message|
+          %div{ class: "flash-#{key}" }= message
 
       %section
         %div.button-grouping
@@ -21,7 +21,8 @@
     -else
       %header
         %a.logo(href=root_path) A Day In The Life
-        = button_to "My Journals", user_journals_path(current_user), method: :get, :class => "journals_btn"
+        = button_to "Profile",  user_journals_path(current_user), method: :get, class: 'profile_btn'
+        = button_to "Journals", user_journals_path(current_user), method: :get, :class => "journals_btn"
         = button_to "Sign Out", user_session_path, method: :delete, :class => "sign_out_btn"
       %div.flash-container
         - flash.each do |key, message|

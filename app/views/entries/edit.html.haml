@@ -1,7 +1,7 @@
-%h1 Edit Entry
-
-= simple_form_for @entry, url: journal_entry_path, method: :put do |f|
-  = f.input :title
-  = f.input :post
-  = f.input :image, label: "Upload an image"
-  = f.button :submit, "Edit Entry"
+%div.edit-entry-container
+  %h1 Edit Entry
+  = simple_form_for @entry, url: journal_entry_path, method: :put do |f|
+    = f.input :title
+    = f.input :post
+    = f.input :image, label: "Upload an image"
+    = f.button :submit, "Save Changes"

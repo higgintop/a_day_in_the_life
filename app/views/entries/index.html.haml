@@ -18,7 +18,7 @@
   -div_num = 0
   -@entries.each do |entry|
     %div{class: "entry-#{div_num}"}
-      - background_image = entry ? entry.image_url.to_s : ""
+      - background_image = entry.image_url ? entry.image_url.to_s : "/entryDefault.jpeg"
       %div.image-container{:style => "background-image: url('#{background_image}')"}
       %h2.title #{entry.title}
       %div{class: "entry-#{div_num}-hover"}

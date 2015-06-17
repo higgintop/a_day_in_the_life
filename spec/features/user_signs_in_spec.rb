@@ -29,12 +29,10 @@ feature "User signs in" do
     fill_in "Password", with: "wrongpassword"
     click_button "Go!"
     page.should have_content("We could not sign you in. Please check your email/password and try again.")
-    page.should_not have_content("Create your account")
-    page.should_not have_content("Password confirmation")
     field_labeled("Email").value.should == user.email
     fill_in "Password", with: "password1"
-    click_button "Sign In"
-    page.should have_content("Welcome back, Bob")
+    click_button "Go!"
+    page.should have_content("Welcome back, Bob!")
   end
 
   scenario "User signs in with wrong email" do

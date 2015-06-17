@@ -13,8 +13,9 @@ RSpec.describe Journal, type: :model do
     end
     it "should have unique titles" do
       some_title = Faker::Name.name
-      Fabricate(:journal, title: some_title)
       Fabricate.build(:journal, title: some_title).should_not be_valid
     end
+
+    it { should validate_presence_of :user }
   end
 end

@@ -5,24 +5,35 @@
 
 // CALENDAR
 #calendar {
-  width: 80%;
-  margin-left: 150px;
+  width: 100%;
+  margin: 0 10%;;
 }
+
+#calendar h2 {
+  display: inline-block;
+  margin: 0 auto;
+  width: 80%;
+  font-family: opensansFont;
+  font-size: 50px;
+}
+
 #calendar table {
   border-collapse: collapse;
+  width: 80%;
+  //margin-left: 12%;
 }
 
 #calendar td,
 #calendar th {
-  font-family: "Lucida Grande",arial,helvetica,sans-serif;
-  font-size: 10px;
+  font-family: opensansFont;
+  font-size: 15px;
   padding: 6px;
   border: 1px solid #999;
 }
 
 #calendar th {
-  background: #DDD;
-  color: #666;
+  background: #282827;
+  color: white;
   text-align: center;
   width: 14.2857142857143%;
 }
@@ -33,6 +44,20 @@
   height: 80px;
   vertical-align: top;
   font-size: 16px;
+  font-weight: 600;
+
+  ul {
+    li {
+      font-size: 15px;
+      color: white;
+      background-color: #E25D33;
+      border-bottom: 1px solid white;
+
+      a {
+        color: white;
+      }
+    }
+  }
 }
 
 #calendar .notmonth {
@@ -44,6 +69,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
+  color: #999;
 }
 
 #calendar #month a, #calendar #month a:hover {
@@ -53,7 +79,7 @@
 }
 
 #calendar .today {
-  background-color: #D7F2FF;
+  background-color: lighten(#DCD8CF, 15%);
 }
 
 #calendar ul {
@@ -93,7 +119,8 @@
   width:  90px;;
   height:  200px;
   position: fixed;
-  background: linear-gradient(rgba(71, 66, 61, 0.7), rgba(71, 66, 61, 0.7));
+  background: rgba(226,93,51, 0.8);
+  margin-bottom: 20%;
 
   ul {
     display: inline-block;

@@ -4,26 +4,34 @@ require 'capybara/rspec'
 
 feature "Users add tracks" do
 
+
+  before do
+    user = Fabricate(:user, name: "Jenny")
+    visit root_path
+    click_on "Sign In"
+    fill_in "Email", with: user.email
+    fill_in "Password", with: "password1"
+    click_button "Go!"
+  end
+
   scenario "happy path creating a journal" do
-    signin_as Fabricate(:user)
-    visit journals_path
+    click_on "Journals"
     click_on "Add New Journal"
     fill_in "Title", with: "Movie Reviews"
     click_on "Create Journal"
-    page.should have_css(".notice", text: "Movie Reviews Journal has been created")
-    current_path.should == journals_path
-    within("ul#journals") do
+    page.should have_css(".flash-notice", text: "The Movie Reviews Journal has been created")
+    within("div.journals-container") do
       page.should have_content("Movie Reviews")
     end
   end
 
   scenario "sad path creating a journal" do
-    signin_as Fabricate(:user)
-    visit new_journal_path
+    click_on "Journals"
+    click_on "Add New Journal"
     fill_in "Title", with: "   "
     click_on "Create Journal"
-    page.should have_css(".alert", text: "Please fix the errors below to continue.")
-    page.should have_css(".journal_title .error", text: "can't be blank")
+    page.should have_css(".flash-alert", text: "Please fix the errors below to continue.")
+    page.should have_css(".help-block", text: "can't be blank")
     field_labeled("Title").value.should == "   "
   end
 end

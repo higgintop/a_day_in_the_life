@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'rails_helper'
 require 'capybara/rspec'
 
-feature "Users edits and deletes tracks" do
+feature "Users edits and deletes journals" do
 
 
   before do

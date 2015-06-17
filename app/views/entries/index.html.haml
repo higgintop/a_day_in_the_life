@@ -6,12 +6,12 @@
 %nav.entries-nav
   %ul
     %li
-      =link_to "", new_journal_entry_path(@journal),method: :get, class: 'newEntry'
+      =link_to "New Entry", new_journal_entry_path(@journal),method: :get, class: 'newEntry'
     %li
       -#NOTE: this needs cleaned up -> don't need to pass in an entry id
-      =link_to "", journal_entry_calendar_path(@journal, :entry_id => 41), method: :get,  class: 'calEntry'
+      =link_to "Calendar", journal_entry_calendar_path(@journal, :entry_id => 41), method: :get,  class: 'calEntry'
     %li 
-      =link_to "", journal_entries_path, class: 'archiveEntry'
+      =link_to "Archive", journal_entries_path, class: 'archiveEntry'
 
 
 %div.entries-container
@@ -22,7 +22,7 @@
       %div.image-container{:style => "background-image: url('#{background_image}')"}
       %h2.title #{entry.title}
       %div{class: "entry-#{div_num}-hover"}
-        =link_to "", journal_entry_path(@journal, entry), method: :get
+        =link_to "View Entry", journal_entry_path(@journal, entry), method: :get
       - div_num += 1
 
 

@@ -7,6 +7,7 @@ feature "Users add tracks" do
 
   before do
     user = Fabricate(:user, name: "Jenny")
+    Fabricate(:journal, title: "Travelling", user: user)
     visit root_path
     click_on "Sign In"
     fill_in "Email", with: user.email
@@ -33,6 +34,15 @@ feature "Users add tracks" do
     page.should have_css(".flash-alert", text: "Please fix the errors below to continue.")
     page.should have_css(".help-block", text: "can't be blank")
     field_labeled("Title").value.should == "   "
+  end
+
+  scenario "creating a duplicate journal" do
+    click_on "Journals"
+    click_on "Add New Journal"
+    fill_in "Title", with: "Travelling"
+    click_on "Create Journal"
+    page.should have_css(".flash-alert", text: "Please fix the errors below to continue.")
+    page.should have_css(".help-block", text: "has already been taken")
   end
 end
 

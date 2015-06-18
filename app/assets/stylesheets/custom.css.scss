@@ -22,9 +22,11 @@ $success-color: #e6efc2 !default;
   background-color: $color;
   color: darken($color, 60%);
   display: block;
+  font-family: mathleteFont;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 0;
-  padding:  2em;
+  padding:  15px;
   text-align: center;
 }
 
@@ -57,9 +59,6 @@ $success-color: #e6efc2 !default;
   src: url('opensans.ttf');
 }
 
-
-
-
 //******************************
 // BODY
 //******************************
@@ -75,6 +74,11 @@ header {
   background-size: 100%;
   text-align: center;
   padding: 50px;
+  border: 1px solid transparent;
+  -webkit-border-image: -webkit-linear-gradient(top right, black 0%, lightgrey 100%);
+  border-image: linear-gradient(to bottom left, black 0%, lightgrey 100%);
+  border-image-slice: 1;
+
 
   .logo {
     color: $logo-color;
@@ -161,10 +165,27 @@ section {
   margin: 0 auto;
   margin-bottom: 50px;
 
+
   h2 {
     text-align: center;
-    color: white;
+    font-size: 60px;
+    color: $primary-button-color;
+    font-family: mathleteFont;
   }
+
+  label {
+     color: $primary-button-color;
+     font-family: mathleteFont;
+     font-size: 30px;
+  }
+
+  input[type="submit"] {
+    color: $primary-button-color;
+    font-family: mathleteFont;
+    font-size: 30px;
+    padding: 0 10px;
+  }
+
 }
 
 //*********************************
@@ -174,11 +195,23 @@ section {
 .journals-container {
 
   text-align: center;
-  color: white;
+  //color: white;
+  font: 20px handwrittenFont;
+
 
   h1 {
-    color: white;
-    font-family: handwrittenFont;
+    color: $primary-button-color;
+    font: 60px handwrittenFont;
+  }
+
+  a {
+   font: 20px handwrittenFont;
+  }
+
+  form {
+   display: block;
+   margin-left: 0;
+   margin-top: 20px;
   }
 
   .add-journal-btn {
@@ -272,4 +305,19 @@ section {
   }
 }
 
+footer {
+  width: 100%;
+  height: 600px;
+  background:linear-gradient(rgba(255,255,255, 0.7), rgba(255,255,255, 0.7)), url('book.JPG') no-repeat;
+  background-size: 120%;
+  background-position: 35% 70%;
+  text-align: center;
+  padding: 50px;
+  border-top: 1px solid transparent;
+  -webkit-border-image: -webkit-linear-gradient(top right, lightgrey 0%, black 100%);
+  border-image: linear-gradient(to bottom left, lightgrey 0%, black 100%);
+  border-image-slice: 1;
+
+
+}
 

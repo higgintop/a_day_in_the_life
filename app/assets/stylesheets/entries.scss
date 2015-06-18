@@ -6,7 +6,7 @@
 // CALENDAR
 #calendar {
   width: 100%;
-  margin: 0 10%;;
+  margin: 0 10% 10%;
 }
 
 #calendar h2 {
@@ -78,7 +78,7 @@
 }
 
 #calendar .today {
-  background-color: lighten(#DCD8CF, 15%);
+  background-color: lighten(#CCC, 10%);
 }
 
 #calendar ul {
@@ -164,9 +164,10 @@
 // Entries Container
 .entries-container {
   max-width: 1150px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
   position: relative;
   width: 1150px;
+  height: 800px;
 
   .entry-0, .entry-1, .entry-2, .entry-3, .entry-4, .entry-5 {
     width: 340px;
@@ -185,8 +186,8 @@
       background-repeat: no-repeat;
       background-position: center 0%;
       border: 1px solid transparent;
-      -webkit-border-image: -webkit-linear-gradient(top right, white 0%, black 100%);
-      border-image: linear-gradient(to bottom left, white 0%, black 100%);
+      -webkit-border-image: -webkit-linear-gradient(top right, lightgrey 0%, black 100%);
+      border-image: linear-gradient(to bottom left, lightgrey 0%, black 100%);
       border-image-slice: 1;
     }
 

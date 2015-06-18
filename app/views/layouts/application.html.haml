@@ -29,3 +29,5 @@
           %div{ class: "flash-#{key}" }= message
 
     = yield
+    -if !logged_in?
+      %footer

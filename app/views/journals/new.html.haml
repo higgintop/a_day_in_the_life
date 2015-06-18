@@ -1,6 +1,6 @@
-%h1 Add A New Journal
--#= render partial: 'journals/form', locals: {journal: @journal}
-= simple_form_for @journal, url: user_journals_path(current_user), method: :post do |f|
-  = f.input :title
-  = f.button :submit, "Create Journal"
+%div.new-journal-container
+  %h1 Add A New Journal
+  = simple_form_for @journal, url: user_journals_path(current_user), method: :post do |f|
+    = f.input :title
+    = f.button :submit, "Create Journal"
 

@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611234057) do
+ActiveRecord::Schema.define(version: 20150615210014) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "entries", force: :cascade do |t|
     t.string   "title"
@@ -23,8 +26,8 @@ ActiveRecord::Schema.define(version: 20150611234057) do
     t.string   "image"
   end
 
-  add_index "entries", ["journal_id"], name: "index_entries_on_journal_id"
-  add_index "entries", ["user_id"], name: "index_entries_on_user_id"
+  add_index "entries", ["journal_id"], name: "index_entries_on_journal_id", using: :btree
+  add_index "entries", ["user_id"], name: "index_entries_on_user_id", using: :btree
 
   create_table "images", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -38,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150611234057) do
     t.integer  "user_id"
   end
 
-  add_index "journals", ["user_id"], name: "index_journals_on_user_id"
+  add_index "journals", ["user_id"], name: "index_journals_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -50,4 +53,7 @@ ActiveRecord::Schema.define(version: 20150611234057) do
     t.string   "crypted_password"
   end
 
+  add_foreign_key "entries", "journals"
+  add_foreign_key "entries", "users"
+  add_foreign_key "journals", "users"
 end

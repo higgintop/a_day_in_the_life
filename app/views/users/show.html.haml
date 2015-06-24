@@ -4,4 +4,5 @@
   %h2 #{@user.name}
   %p #{@user.bio}
 
-  =button_to "Edit Profile", edit_user_path(current_user), method: :get
+  =button_to "Edit Profile", edit_user_path(current_user), method: :get, class: "edit-profile-btn"
+  

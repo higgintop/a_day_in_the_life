@@ -1,3 +1,81 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.profile-container {
+  text-align: center;
+  
+  h1 {
+    text-align: center;
+    font-family: handWrittenFont;
+    font-size: 60px;
+    color:#282827;
+  }
+
+  h2 {
+    font-family: handWrittenFont;
+    font-size: 40px;
+    color:#E25D33;
+    font-weight: 800;
+  }
+
+  img {
+   border-radius: 50%;
+   width: 100px;
+   height: 100px;
+  }
+
+  p {
+   font-family: opensansFont;
+   font-size: 20px;
+   line-height: 1.8;
+   font-weight: 600;
+  }
+
+  form {
+    margin: 0;
+
+    .edit-profile-btn {
+      background-color: #282827;
+      color: white;
+      font-family: handwrittenFont;
+      width: 150px;
+      height: 50px;
+      border-radius: 15px;
+      font-size: 30px; 
+    }
+  }
+}
+
+.edit-profile-container {
+  width: 50%;
+  margin: 20px auto;
+
+  h1 {
+    text-align: center;
+    font-family: handWrittenFont;
+    font-size: 60px;
+    color:#282827;
+  }
+
+  input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+  }
+
+  textarea {
+  height: 200px;
+  }
+
+  .save-profile-btn {
+    display: inline-block;
+    background-color: #282827;
+    color: white;
+    font-family: handwrittenFont;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 30px; 
+  }
+
+}

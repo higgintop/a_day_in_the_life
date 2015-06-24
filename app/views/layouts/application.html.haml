@@ -21,7 +21,7 @@
     -else
       %header
         %a.logo(href=root_path) A Day In The Life
-        = button_to "Profile",  user_journals_path(current_user), method: :get, class: 'profile_btn'
+        = button_to "Profile",  user_path(current_user), method: :get, class: 'profile_btn'
         = button_to "Journals", user_journals_path(current_user), method: :get, :class => "journals_btn"
         = button_to "Sign Out", user_session_path, method: :delete, :class => "sign_out_btn"
       %div.flash-container

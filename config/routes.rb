@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     #end
   #end
 
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new, :create, :show, :edit, :update] do
     resources :journals, except: [:show]
   end
 

@@ -1,6 +1,6 @@
 
 %div.entry-container
-  =link_to "Back", journal_entries_path, class: 'backBtn'
+  =link_to "Back", request.referrer, class: 'backBtn'
 
   %h1
     =@entry.title

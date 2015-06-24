@@ -19,7 +19,6 @@ class EntriesController < ApplicationController
   end
 
   def show
-    # Issue - when showing a single entry ... we do NOT have access to a journal ...
     @entry = Entry.find(params[:id])
   end
 

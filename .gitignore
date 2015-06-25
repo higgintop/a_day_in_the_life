@@ -10,7 +10,8 @@
 *.sqlite3
 
 # Ignore images
-public/development/*
+public/uploads/*
+public/development/uploads/*
 
 # Ignore aws keys
 config/application.yml

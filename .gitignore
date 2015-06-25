@@ -11,3 +11,6 @@
 
 # Ignore images
 public/development/*
+
+# Ignore aws keys
+config/application.yml

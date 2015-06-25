@@ -1,0 +1,4 @@
+# Remove the '.example' suffix from this file name and add AWS keys below
+development:
+ AWS_ACCESS_KEY: 'KEY GOES HERE'
+ AWS_SECRET_ACCESS_KEY: 'SECRET ACCESS KEY HERE'

@@ -26,6 +26,12 @@ gem 'autoprefixer-rails'
 gem 'carrierwave'
 gem 'rmagick'
 
+# for carrierwave to talk to s3
+gem "fog"
+
+# privacy gem for aws
+gem "figaro"
+
 # Pagination gem
 gem 'kaminari'
 
